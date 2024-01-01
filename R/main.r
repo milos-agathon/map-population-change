@@ -37,11 +37,14 @@ urls <- c(
 options(timeout = 300)
 
 for (url in urls) {
-    download.file(
-        url = url,
-        path = getwd(),
-        destfile = basename(url)
-    )
+    destfile = basename(url)
+    if (!file.exists(destfile)) {
+        download.file(
+            url = url,
+            path = getwd(),
+            destfile = destfile
+        )
+    }
 }
 
 lapply(
