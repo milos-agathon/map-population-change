@@ -6,7 +6,7 @@
 
 libs <- c(
     "tidyverse", "terra",
-    "giscoR", "tidyterra
+    "giscoR", "tidyterra"
 )
 
 installed_libs <- libs %in% rownames(
